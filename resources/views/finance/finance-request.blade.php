@@ -18,6 +18,7 @@
                             <th>Quantity</th>
                             <th>Price</th>
                             <th>Action</th>
+                            sheesh
                         </tr>
                     </thead>
                     <tbody>
