@@ -28,9 +28,11 @@
 <!-- ======== sidebar-nav start =========== -->
 <aside class="sidebar-nav-wrapper" style="overflow-y: auto;">
     <div class="navbar-logo">
-        <a href="{{ route('home') }}">
-            <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="img-fluid"/>
-        </a>
+        <div class="text-start">
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('images/logo/mainLogo.png') }}" alt="logo" class="img-fluid"/>
+            </a>
+        </div>
     </div>
     <nav class="sidebar-nav">
         @include('layouts.navigation')
@@ -110,9 +112,11 @@
                     <li class="breadcrumb-item">
                         <a href="#">{{ $header }}</a>
                     </li>
-                    <li class="breadcrumb-item active">
-                        {{ $title }}
-                    </li>
+                    @if ($title != "Dashboard")
+                        <li class="breadcrumb-item active">
+                            {{ $title }}
+                        </li>
+                    @endif
                     </ol>
                 </nav>
             </div>

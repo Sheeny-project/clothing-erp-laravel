@@ -96,4 +96,72 @@
             </li>
         </ul>
     </li>
+    <li class="nav-item nav-item-has-children">
+        <a class="collapsed" href="#0" class="" data-bs-toggle="collapse" data-bs-target="#marketing"
+           aria-controls="marketing" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="icon">
+                <i class="lni lni-invest-monitor"></i>
+            </span>
+            <span class="text">Marketing</span>
+        </a>
+        <ul id="marketing" class="dropdown-nav collapse" style="">
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Email marketing</a>
+            </li>
+            <li>
+                <a href="#">Customer support</a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item nav-item-has-children">
+        <a class="collapsed" href="#0" class="" data-bs-toggle="collapse" data-bs-target="#hr"
+           aria-controls="hr" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="icon">
+                <i class="lni lni-grow"></i>
+            </span>
+            <span class="text">Human Resource</span>
+        </a>
+        <ul id="hr" class="dropdown-nav collapse" style="">
+            <li>
+                <a href="{{ route('hr') }}">Dashboard</a>
+            </li>
+            <li>
+                <a href="{{ route('hr.employees') }}">Employees</a>
+            </li>
+            <li>
+                <a href="#">Online Applicant</a>
+            </li>
+            <li>
+                <a href="#">Salary</a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item nav-item-has-children">
+        <a class="collapsed" href="#0" class="" data-bs-toggle="collapse" data-bs-target="#loans"
+           aria-controls="loans" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="icon">
+                <i class="lni lni-coin"></i>
+            </span>
+            <span class="text">Loans</span>
+        </a>
+        <ul id="loans" class="dropdown-nav collapse" style="">
+            <li>
+                <a href="#">Loans</a>
+            </li>
+            <li>
+                <a href="#">Loan form</a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a href="#">
+              <span class="icon">
+                <i class="lni lni-comments"></i>
+              </span>
+            <span class="text">{{ __('Chats') }}</span>
+        </a>
+    </li>
 </ul>

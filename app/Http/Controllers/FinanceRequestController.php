@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\InventoryRequest;
+use App\Models\FinanceRequest;
 class FinanceRequestController extends Controller
 {
     public function index(){
@@ -26,6 +27,19 @@ class FinanceRequestController extends Controller
             ];
         }
         return response()->json($response);
+    }
+    public function financeRequestPurchasing(Request $request, $id){
+        $data = FinanceRequest::create([
+            'inventory_request_id' => $id,
+            'status' => 2
+        ]);
+        $approve = InventoryRequest::where('id', $id)->update([
+            'status' => 1,
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Stocks request submitted successfully'
+        ]);
     }
 
 

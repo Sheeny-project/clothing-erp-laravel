@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventory_rqst_tbl', function (Blueprint $table) {
+        Schema::create('finance_request_tbl', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
-            $table->integer('quantity');
-            $table->longtext('reason');
-            $table->integer('requestor_id');
+            $table->integer('inventory_request_id');
             $table->integer('approved_by');
             $table->integer('status');
             $table->timestamps();
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inventory_rqst_tbl');
+        Schema::dropIfExists('finance_request_tbl');
     }
 };

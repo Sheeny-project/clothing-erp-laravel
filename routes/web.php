@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/inventory', [\App\Http\Controllers\InventoryDashboardController::class, 'index'])->name('inventory');
     Route::get('/inventory/pending', [\App\Http\Controllers\InventoryDashboardController::class, 'showPendingStocks']);
+    Route::get('/inventory/approved', [\App\Http\Controllers\InventoryDashboardController::class, 'showApprovedStocks']);
 
     Route::get('/inventory/request/stock', [\App\Http\Controllers\InventoryRequestController::class, 'index'])->name('inventory.request');
     Route::post('/inventory/request/stock/make', [\App\Http\Controllers\InventoryRequestController::class, 'makeRequest']);
@@ -52,6 +53,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/finance/request', [\App\Http\Controllers\FinanceRequestController::class, 'index'])->name('finance.request');
     Route::get('/finance/request/show', [\App\Http\Controllers\FinanceRequestController::class, 'showRequest']);
+    Route::post('/finance/request/submit/{id}', [\App\Http\Controllers\FinanceRequestController::class, 'financeRequestPurchasing']);
 
     Route::get('/finance/generate/report', [\App\Http\Controllers\FinanceGenerateReportController::class, 'index'])->name('generate.report');
+
+    Route::get('/hr', [\App\Http\Controllers\HrDashboardController::class, 'index'])->name('hr');
+
+    Route::get('/hr/employees', [\App\Http\Controllers\HrEmployeesController::class, 'index'])->name('hr.employees');
+    Route::get('/hr/employees/all', [\App\Http\Controllers\HrEmployeesController::class, 'getEmployees']);
 });
